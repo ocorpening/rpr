@@ -12,8 +12,10 @@ class WebpackDevConfig extends WebpackBaseConfig {
     super();
     const portNum = parseInt(process.env.OPENSHIFT_NODEJS_PORT || 8080);
     const hostName = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+    const firstEntry = 'webpack-dev-server/client?http://' + hostName + ':' + portNum;
     console.log("%%%%%%^^^^^^ OPENSHIFT_NODEJS_IP: " + process.env.OPENSHIFT_NODEJS_IP);
     console.log("%%%%%%^^^^^^ hostName: " + hostName);
+    console.log("%%%%%%^^^^^^ firstEntry: " + firstEntry);
     this.config = {
       devtool: 'cheap-module-source-map',
       entry: [
