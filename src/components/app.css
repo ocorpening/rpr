@@ -1,0 +1,110 @@
+:root {
+  --total-height: 140px;
+  --total-width: 400px;
+  --radius: 50px;
+  --spacing: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #222;
+}
+
+.index {
+  width: 40%;
+  height: 170px;
+  margin: 50px auto;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #000;
+  border-radius: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(gainsboro, silver);
+}
+
+.outermost {
+  position: absolute;
+  height: var(--total-height);
+  width: var(--total-width);
+  border: darkgray 4px solid;
+  border-radius: var(--radius);
+}
+
+.outer {
+  position: absolute;
+  height: calc(var(--total-height) - var(--spacing));
+  width: calc(var(--total-width) - var(--spacing));
+  border: red 4px solid;
+  border-radius: var(--radius);
+  top: calc(var(--radius)/2);
+  left: calc(var(--radius)/2);
+}
+
+.inner {
+  position: absolute;
+  height: calc(var(--total-height) - calc(var(--spacing) * 2));
+  width: calc(var(--total-width) - var(--spacing) * 2);
+  border: yellow 4px solid;
+  border-radius: var(--radius);
+  top: 40px;
+  left: 40px;
+}
+
+.star-five {
+  margin: 50px 0;
+  position: relative;
+  display: block;
+  color: gray;
+  width: 0px;
+  height: 0px;
+  border-right:  100px solid transparent;
+  border-bottom: 70px  solid gray;
+  border-left:   100px solid transparent;
+  transform:      rotate(35deg) scale(.2);
+}
+
+.star-five:before {
+  border-bottom: 80px solid gray;
+  border-left: var(--spacing) solid transparent;
+  border-right: var(--spacing) solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  display: block;
+  content: '';
+  transform:      rotate(-35deg);
+}
+
+.star-five:after {
+  position: absolute;
+  display: block;
+  color: gray;
+  top: 3px;
+  left: -105px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid gray;
+  border-left: 100px solid transparent;
+  transform:      rotate(-70deg);
+  content: '';
+}
+
+.star-left {
+  top: -10px;
+  left: var(--spacing);
+}
+
+.star-right {
+  top: -130px;
+  left: 240px;
+}
+
