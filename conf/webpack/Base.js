@@ -75,6 +75,8 @@ class WebpackBaseConfig {
       importLoaders: 1,
       localIdentName: '[name]-[local]-[hash:base64:5]'
     };
+    const portNum = parseInt(process.env.OPENSHIFT_NODEJS_PORT || 8080);
+    console.log("&&&&&&&&&&&&& portNum = " + portNum);
 
     return {
       context: this.srcPathAbsolute,
@@ -85,7 +87,7 @@ class WebpackBaseConfig {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        port: 8000
+        port: portNum
       },
       entry: './index.js',
       module: {
